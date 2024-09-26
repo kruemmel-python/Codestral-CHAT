@@ -1,0 +1,3 @@
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/MyWxWidgetsApp.dir
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/ZERO_CHECK.dir

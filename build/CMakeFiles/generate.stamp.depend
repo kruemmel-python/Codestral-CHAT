@@ -1,0 +1,35 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/CMakeLists.txt
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/3.30.3/CMakeCXXCompiler.cmake
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/3.30.3/CMakeRCCompiler.cmake
+C:/Users/ralfk/Documents/c++ Lerninhalte/vcpkg_beispielprojekt/build/CMakeFiles/3.30.3/CMakeSystem.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/nanosvg/NanoSVGConfig.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/nanosvg/NanoSVGConfigVersion.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/nanosvg/NanoSVGTargets-debug.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/nanosvg/NanoSVGTargets-release.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/nanosvg/NanoSVGTargets.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/vcpkg-cmake-wrapper.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/wxWidgetsConfig.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/wxWidgetsConfigVersion.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/wxWidgetsTargets-debug.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/wxWidgetsTargets-release.cmake
+C:/Users/ralfk/vcpkg/installed/x64-windows/share/wxwidgets/wxWidgetsTargets.cmake
+C:/Users/ralfk/vcpkg/scripts/buildsystems/vcpkg.cmake
