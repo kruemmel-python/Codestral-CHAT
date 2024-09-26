@@ -102,18 +102,89 @@ Falls du Fehlermeldungen bezüglich fehlender Bibliotheken erhältst, stelle sic
 Falls es Probleme mit der CMake-Konfiguration gibt, kannst du den CMake-Cache leeren und neu konfigurieren:
 - Gehe zu **CMake > Cache löschen und neu konfigurieren** in Visual Studio.
 
-## Kontakt
+#### Chat mit Codestral
 
-Bei Fragen oder Problemen, wende dich gerne an Ralf Krümmel oder erstelle ein Issue im Repository.
+Dieses C++-Programm ist eine einfache GUI-basierte Anwendung, die es dem Benutzer ermöglicht, Nachrichten an die Codestral-API zu senden und Antworten in einer grafischen Oberfläche anzuzeigen. Die Anwendung nutzt `wxWidgets` für die Benutzeroberfläche, `libcurl` für die HTTP-Kommunikation und `nlohmann/json` zur Verarbeitung von JSON-Daten.
+
+## Funktionen
+
+- **Text-Eingabe:** Der Benutzer kann eine Nachricht in die Textbox eingeben und diese über die API an Codestral senden.
+- **Antwort-Anzeige:** Die Antwort von Codestral wird in einem schreibgeschützten Textfeld angezeigt.
+- **Statusleiste:** Zeigt den aktuellen Status der Anfrage und des Programms an (z.B. "Bereit", "Antwort erhalten").
+
+## Voraussetzungen
+
+- C++17 oder höher
+- wxWidgets (Version 3.0 oder höher)
+- libcurl (mit SSL-Unterstützung)
+- nlohmann/json (JSON für moderne C++ Bibliothek)
+
+## Installation
+
+1. **wxWidgets installieren:**
+   - Linux: Installiere `libwxgtk3.0-dev` über deinen Paketmanager.
+   - macOS: Nutze `brew install wxwidgets`.
+   - Windows: Lade die neueste Version von der [wxWidgets Website](https://www.wxwidgets.org/downloads/) herunter.
+
+2. **libcurl installieren:**
+   - Linux: Nutze `sudo apt install libcurl4-openssl-dev`.
+   - macOS: Nutze `brew install curl`.
+   - Windows: Lade die neueste Version von der [cURL Website](https://curl.se/download.html) herunter.
+
+3. **nlohmann/json Bibliothek:**
+   - Füge die Bibliothek entweder direkt zu deinem Projekt hinzu oder nutze einen Paketmanager wie `vcpkg`:
+     ```bash
+     vcpkg install nlohmann-json
+     ```
+
+4. **Kompilieren:**
+   ```bash
+   g++ -std=c++17 main.cpp -o chat_app `wx-config --cxxflags --libs` -lcurl
+   ```
+
+   Stelle sicher, dass du deinen API-Schlüssel im Code eingibst (ersetze `YOUR_API_KEY` in der `SendChatRequest`-Funktion).
+
+## Nutzung
+
+1. Starte die Anwendung. Es öffnet sich ein Fenster mit einem Textfeld für die Eingabe von Nachrichten.
+2. Gib eine Nachricht ein und drücke den "Nachricht senden"-Button.
+3. Die Antwort des Codestral-Chatbots wird im unteren Textfeld angezeigt.
+
+## Beispiel
+
+Hier ist ein kurzer Überblick darüber, wie die API-Kommunikation funktioniert:
+
+```cpp
+std::string MyFrame::SendChatRequest(const std::string& message) {
+    CURL* curl = curl_easy_init();
+    if (!curl) {
+        wxLogError("curl_easy_init() fehlgeschlagen.");
+        return "";
+    }
+    std::string readBuffer;
+    // Setup der Anfrage an die Codestral-API
+    nlohmann::json jsonData = {
+        {"model", "codestral-latest"},
+        {"messages", { { {"role", "user"}, {"content", message} } }}
+    };
+    std::string jsonString = jsonData.dump();
+
+    // HTTP-Header und Optionen konfigurieren
+    curl_easy_setopt(curl, CURLOPT_URL, "https://codestral.mistral.ai/v1/chat/completions");
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString.c_str());
+
+    // Empfange die Antwort
+    curl_easy_perform(curl);
+    return readBuffer;
+}
 ```
 
-### Erläuterungen zu den Schritten:
+## API Schlüssel
 
-1. **Installation von Git**: Git wird benötigt, um das Projekt und vcpkg zu klonen.
-2. **vcpkg installieren**: Schritt für Schritt-Anleitung, wie vcpkg heruntergeladen und installiert wird.
-3. **wxWidgets installieren**: Wie wxWidgets über vcpkg installiert wird.
-4. **CMake installieren**: CMake ist erforderlich, da das Projekt CMake verwendet.
-5. **CMake in Visual Studio einrichten**: Schritt-für-Schritt-Anleitung, wie man ein CMake-Projekt in Visual Studio öffnet und konfiguriert.
-6. **Subsystem auf Windows setzen**: Falls erforderlich, wie das Subsystem auf Windows gesetzt wird.
-7. **Kompilieren und Ausführen**: Anleitung zur Kompilierung und Ausführung des Projekts in Visual Studio.
+Um das Programm nutzen zu können, benötigst du einen API-Schlüssel für die Codestral-API. Registriere dich auf der [Codestral-Website](https://console.mistral.ai/codestral) und erhalte deinen Schlüssel.
+
+## Lizenz
+
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE](LICENSE) Datei für Details.
+
 
